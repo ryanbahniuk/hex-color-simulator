@@ -1,0 +1,41 @@
+#color-display {
+	width: 500px;
+	height: 200px;
+	margin: 1em auto 0 auto;
+	background-color: #000;
+}
+
+#set-color {
+	margin: 1em auto 0 auto;
+	display: block;
+	width: 200px;
+}
+
+#set-color input {
+	width: 100%;
+}
+
+#hex-color {
+	margin: 3em auto 0 auto;
+	width: 270px;
+	font-size: 1.3em;
+}
+
+#hex-color div {
+	display: inline-block;
+	margin-left: 2em;
+}
+
+#hex-color div:before {
+	content: "\f0de";
+	font-family: FontAwesome;
+	display: block;
+	font-size: 1.1em;
+}
+
+#hex-color div:after {
+	content: "\f0dd";
+	font-family: FontAwesome;
+	display: block;
+	font-size: 1.1em;
+}
