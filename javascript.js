@@ -1,11 +1,29 @@
 $(document).ready(function(){
 	setColor();
 
-	$('#set-color input').on("keyup", function(){
-		color = "#" + $(this).val();
-		var isOk  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
-		if (isOk) {
-			$('#color-display').css("background-color", color);
+	$(window).on("keydown", function(event){
+		console.log(event.keyCode);
+		switch(event.keyCode) {
+    case 49:
+        increment("red");
+        break;
+    case 50:
+    		decrement("red");
+        break;
+    case 51:
+        increment("green");
+        break;
+    case 52:
+    		decrement("green");
+        break;
+    case 53:
+        increment("blue");
+        break;
+    case 54:
+    		decrement("blue");
+        break;
+    default:
+        break;
 		}
 	});
 
@@ -41,6 +59,28 @@ var incrementColor = function(color, step){
     }
     return color;
 };
+
+var increment = function(color) {
+	var div = "." + color;
+	var $valueContainer = $(div).find(".value");
+	var hex = $valueContainer.html();
+	if ((parseInt(hex, 16) >= parseInt("00", 16)) && (parseInt(hex, 16) < parseInt("ff", 16))) {
+		var newHex = incrementColor(hex, 1);
+		$valueContainer.html(newHex);
+		setColor();
+	}
+}
+
+var decrement = function(color) {
+	var div = "." + color;
+	var $valueContainer = $(div).find(".value");
+	var hex = $valueContainer.html();
+	if ((parseInt(hex, 16) > parseInt("00", 16)) && (parseInt(hex, 16) <= parseInt("ff", 16))) {
+		var newHex = incrementColor(hex, -1);
+		$valueContainer.html(newHex);
+		setColor();
+	}
+}
 
 var setColor = function() {
 	var red = $(".red").find(".value").html();
