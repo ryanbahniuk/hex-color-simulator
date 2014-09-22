@@ -5,6 +5,12 @@
 	background-color: #000;
 }
 
+#current-color {
+	text-align: center;
+	margin-top: 1em;
+	font-size: 2em;
+}
+
 #set-color {
 	margin: 1em auto 0 auto;
 	display: block;
@@ -21,21 +27,7 @@
 	font-size: 1.3em;
 }
 
-#hex-color div {
+#hex-color .column {
 	display: inline-block;
 	margin-left: 2em;
-}
-
-#hex-color div:before {
-	content: "\f0de";
-	font-family: FontAwesome;
-	display: block;
-	font-size: 1.1em;
-}
-
-#hex-color div:after {
-	content: "\f0dd";
-	font-family: FontAwesome;
-	display: block;
-	font-size: 1.1em;
 }
